@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './TodoList.css'
 
 const TodoList = () => {
-    const [tasks, setTasks] = useState([""]);
+    const [tasks, setTasks] = useState([]);
 
     const [newTask, setNewTask] = useState("");
 
@@ -66,7 +66,7 @@ const TodoList = () => {
                 >ADD</button>
             </div>
 
-            <ol>
+            { tasks.length >0 && (<ol>
                 {tasks.map((task, index) =>
                     <li key={index}>
                         <span className='text'>{task}</span>
@@ -87,7 +87,7 @@ const TodoList = () => {
                         </button>
                     </li>
                 )}
-            </ol>
+            </ol>) }
 
         </div>
     )
